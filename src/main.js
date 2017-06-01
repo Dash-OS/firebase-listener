@@ -13,7 +13,7 @@ const $onCancel = Symbol('firebase_$cancel')
 
 const buildConfig = config => ({
   // do we want to first rehydrate the value before creating the listeners?
-  rehydrate: true,
+  rehydrate: false,
   // true for logging, 'detailed' for inclusion of children information
   // in the logs.
   log: false,
