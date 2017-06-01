@@ -355,7 +355,7 @@ class FirebaseListener {
   next = (after = false) => resolveNext.call(this, after)
 
   value = (mutable = true) => (
-    mutable
+    typeof this.state.value === 'object' && mutable
       ? Immutable.asMutable(this.state.value, { deep: true })
       : this.state.value
   )
