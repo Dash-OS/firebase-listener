@@ -397,7 +397,7 @@ class FirebaseListener {
       this.observer.cancel()
       FirebaseListeners.delete(this.url)
       if ( ! this.observer.isCancelled ) {
-        this.observer.publish('cancelled', this.ref)
+        onMaybeUpdateClient.call(this, {}, 'cancelled')
       }
     } catch (e) {
       const shouldThrow = this[$onError](e, { on: 'cancel' })

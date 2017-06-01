@@ -43,7 +43,8 @@ function* handleFirebaseReady(ref) {
   } catch (e) {
     // handle error
   } finally {
-    // cancel the listener?
+    // cancel the listener? once cancelled, the listener will no longer allow 
+    // any calls to next()
     listener.cancel()
   }
 }
