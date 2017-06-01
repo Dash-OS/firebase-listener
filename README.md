@@ -15,6 +15,16 @@ which allows for simple integration with many 3rd party libraries.
 
 > **Important:** This is NOT stable at this time.
 
+### What About Writing to Firebase?
+
+We use Firebase as a top-down approach - similar to [redux](http://redux.js.org/) 
+in many ways.  Our app never directly modifies the firebase.  Instead, we dispatch 
+actions to [AWS Lambda](https://aws.amazon.com/lambda/) which then "reduces" the event 
+and updates our database(s) accordingly.  
+
+You can still use the ref to update directly if needed.  Since switching to the model 
+described above, things have become much more streamlined and easier to handle.
+
 ### Saga Example 
 
 Below is a simple example of a saga from [redux-saga](https://github.com/redux-saga/redux-saga) 
