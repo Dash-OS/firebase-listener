@@ -28,7 +28,16 @@ described above, things have become much more streamlined and easier to handle.
 ### Saga Example 
 
 Below is a simple example of a saga from [redux-saga](https://github.com/redux-saga/redux-saga) 
-using this package to listen to a path.
+using this package to listen to a path.  
+
+In this case we are registering the firebase events 
+[child_added](https://firebase.google.com/docs/database/admin/retrieve-data#child-added), 
+[child_removed](https://firebase.google.com/docs/database/admin/retrieve-data#child-removed), 
+[child_changed](https://firebase.google.com/docs/database/admin/retrieve-data#child-changed) 
+-- however, we use the rehydrate configuration to also register a 
+[once](https://firebase.google.com/docs/database/admin/retrieve-data#section-reading-once) 
+that will update our listener with the entire contents first.  This prevents 
+the listener from receiving child_added events for every child in the path.
 
 ```js
 import { createFirebaseListener } from 'firebase-listener'

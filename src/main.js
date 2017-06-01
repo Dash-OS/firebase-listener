@@ -119,6 +119,11 @@ const onSnapshot = function onFirebaseSnapshot(method, event, snapshot) {
         new_value = Immutable.set(current_value, key, value, { deep: true })
         break
       }
+      case 'child_moved': {
+        // ?? don't really know how to handle this event yet
+        change_event = 'moved'
+        break
+      }
       case 'child_removed': {
         change_event = 'removed'
         new_value = Immutable.without(current_value, key)
