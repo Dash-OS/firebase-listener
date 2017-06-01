@@ -13,6 +13,8 @@ which allows for simple integration with many 3rd party libraries.
 > This was designed to make using Firebase with [redux-saga](https://github.com/redux-saga/redux-saga) 
 > a better experience during our development.
 
+> **Important:** This is NOT stable at this time.
+
 ### Saga Example 
 
 Below is a simple example of a saga from [redux-saga](https://github.com/redux-saga/redux-saga) 

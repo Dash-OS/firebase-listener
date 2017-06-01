@@ -1,6 +1,6 @@
 {
   "name": "firebase-listener",
-  "version": "1.0.6",
+  "version": "0.0.1",
   "description": "Setup & Manage Your Firebase Listeners",
   "main": "dist/firebase-listener.js",
   "author": "Braden R. Napier",
