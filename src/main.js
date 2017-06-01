@@ -67,6 +67,10 @@ const onMaybeUpdateClient = function onFirebaseMaybeUpdateClient(
         e, 
         ['color: darkred']
       ], undefined)
+      const shouldThrow = this[$onError](e, { on: 'update-client' })
+      if ( shouldThrow !== false ) {
+        throw e
+      }
     }
   }
   
@@ -241,12 +245,10 @@ const cancelEvents = function onFirebaseCancelEvents(events) {
       e, 
       ['color: darkred']
     ], undefined)
-    this.observer.publish(
-      'error',
-      'cancel',
-      [ events, cancelledEvents ],
-      e
-    )
+    const shouldThrow = this[$onError](e, { on: 'cancel-event', handlingEvent })
+    if ( shouldThrow !== false ) {
+      throw e
+    }
   }
 }
 
